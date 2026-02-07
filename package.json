@@ -1,0 +1,36 @@
+{
+  "name": "phos",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Data Discovery Browser - Faceted browsing interface for exploring structured datasets",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
+  },
+  "dependencies": {
+    "@duckdb/duckdb-wasm": "^1.29.0",
+    "d3": "^7.9.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^25.0.1",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  },
+  "keywords": [
+    "data-exploration",
+    "faceted-search",
+    "data-visualization",
+    "react"
+  ],
+  "author": "Jordan Auge",
+  "license": "GPL-3.0-or-later"
+}

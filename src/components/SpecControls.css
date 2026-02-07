@@ -1,0 +1,58 @@
+/*
+ * Copyright (c) 2026 Jordan Auge
+ *
+ * This file is part of PHOS.
+ *
+ * PHOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * PHOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with PHOS.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+.spec-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.spec-controls button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ced4da;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.spec-controls button:hover {
+  background: #f8f9fa;
+}
+
+.import-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.import-modal input[type="file"] {
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+}

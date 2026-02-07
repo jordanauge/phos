@@ -1,0 +1,123 @@
+/*
+ * Copyright (c) 2026 Jordan Auge
+ *
+ * This file is part of PHOS.
+ *
+ * PHOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * PHOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with PHOS.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+.multi-level-grouping {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+}
+
+.grouping-header {
+  display: flex;
+  align-items: center;
+}
+
+.grouping-header label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #495057;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.group-levels {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.group-level-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: white;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.level-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #007bff;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.level-name {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.level-controls {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.level-controls button {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ced4da;
+  background: white;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+}
+
+.level-controls button:hover:not(:disabled) {
+  background: #e9ecef;
+}
+
+.level-controls button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.level-controls .remove-btn {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.level-controls .remove-btn:hover {
+  background: #dc3545;
+  color: white;
+}
+
+.add-level-select {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  background: white;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 180px;
+}

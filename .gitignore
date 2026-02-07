@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+.output/
+
+# Observable Framework cache
+.observablehq/cache/
+src/.observablehq/cache/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files
+*.log
+*.backup
+*.bak
+*.tmp
+STATUS*
+SUMMARY*
+IMPLEMENTATION*
+
+# OS files
+Thumbs.db
+.Spotlight-V100
+.Trashes
+src/data/metrics.json

@@ -1,0 +1,123 @@
+/*
+ * Copyright (c) 2026 Jordan Auge
+ *
+ * This file is part of PHOS.
+ *
+ * PHOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * PHOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with PHOS.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+.search-bar {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  padding: 4px 6px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 6px;
+  background: white;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1 1 140px;
+  padding: 4px 6px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  min-width: 140px;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-token {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.search-token-key {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.search-token-value {
+  color: #475569;
+}
+
+.search-token-remove {
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.search-token-remove:hover {
+  color: #ef4444;
+}
+
+.search-btn {
+  padding: 6px 10px;
+  border: 1px solid var(--border-color, #ccc);
+  background: var(--bg-secondary, white);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-btn:hover {
+  background: var(--bg-hover, #f5f5f5);
+}
+
+.search-btn:active {
+  background: var(--bg-active, #e0e0e0);
+}
+
+.search-waiting-overlay {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 14px;
+  background: white;
+  padding-left: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #ddd;
+  border-top-color: #666;
+  border-radius: 50%;
+  animation: search-spin .6s linear infinite;
+}
+
+@keyframes search-spin {
+  to { transform: rotate(360deg); }
+}

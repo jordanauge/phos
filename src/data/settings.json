@@ -1,0 +1,13 @@
+{
+  "defaultDataset": "example.json",
+  "dataSourceMapping": {
+    ".json": "native",
+    ".csv": "native"
+  },
+  "readOnly": false,
+  "enabledPlugins": {
+    "providers": ["native", "duckdb-wasm"],
+    "backends": ["native", "duckdb-wasm"],
+    "views": ["grid", "hierarchical", "graph"]
+  }
+}

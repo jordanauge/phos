@@ -1,0 +1,102 @@
+/*
+ * Copyright (c) 2026 Jordan Auge
+ *
+ * This file is part of PHOS.
+ *
+ * PHOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * PHOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with PHOS.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+.metric-detail-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.metric-detail-modal {
+  background: white;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.metric-detail-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metric-detail-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.metric-detail-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  line-height: 1;
+}
+
+.metric-detail-content {
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.metric-detail-row {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-detail-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.metric-detail-value {
+  font-size: 1rem;
+  color: #333;
+  white-space: pre-wrap;
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.metric-detail-actions {
+  padding: 16px 24px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}

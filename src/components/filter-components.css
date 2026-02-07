@@ -1,0 +1,366 @@
+/*
+ * Copyright (c) 2026 Jordan Auge
+ *
+ * This file is part of PHOS.
+ *
+ * PHOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * PHOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with PHOS.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+/**
+ * Styles for Filter Search, Column Reordering, and Filter Categories
+ */
+
+/* Filter Search Bar */
+.filter-search-container {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.filter-search-header label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.filter-search-help span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background: #f0f0f0;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  cursor: help;
+}
+
+/* Filter Blocks */
+.filter-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-height: 40px;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.filter-block {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: grab;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.filter-block:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.filter-block.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.filter-block-content strong {
+  font-weight: 600;
+}
+
+.filter-block-remove {
+  background: rgba(255,255,255,0.3);
+  border: none;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0;
+  transition: background 0.2s ease;
+}
+
+.filter-block-remove:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+/* Filter Search Input */
+.filter-search-input-wrapper {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.filter-search-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.filter-search-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.filter-search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.suggestion-item {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.suggestion-item:hover,
+.suggestion-item.selected {
+  background: #f0f0f0;
+}
+
+.filter-search-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-search-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.apply-btn {
+  background: #667eea;
+  color: white;
+}
+
+.apply-btn:hover {
+  background: #5568d3;
+}
+
+.copy-btn {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.copy-btn:hover {
+  background: #e0e0e0;
+}
+
+.clear-btn {
+  background: #ff6b6b;
+  color: white;
+}
+
+.clear-btn:hover {
+  background: #ee5a52;
+}
+
+/* Column Picker with Reordering */
+.column-picker {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.column-picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.column-picker-header label {
+  font-weight: 600;
+  margin: 0;
+}
+
+.reset-order-btn {
+  background: #f0f0f0;
+  border: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s ease;
+}
+
+.reset-order-btn:hover {
+  background: #e0e0e0;
+}
+
+.column-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.column-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  cursor: move;
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.column-item:hover {
+  background: #f9f9f9;
+  border-color: #e0e0e0;
+}
+
+.column-item.visible {
+  background: #f0f8ff;
+  border-color: #667eea;
+}
+
+.column-item.dragging {
+  opacity: 0.5;
+}
+
+.drag-handle {
+  color: #999;
+  cursor: grab;
+  font-size: 1rem;
+}
+
+.column-item:active .drag-handle {
+  cursor: grabbing;
+}
+
+.column-item input[type="checkbox"] {
+  margin: 0;
+  cursor: pointer;
+}
+
+.column-item label {
+  flex: 1;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.column-type {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* Filter Categories */
+.filter-categories {
+  margin-top: 1rem;
+}
+
+.filter-category {
+  margin-bottom: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: white;
+}
+
+.filter-category summary {
+  padding: 0.75rem;
+  cursor: pointer;
+  font-weight: 600;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s ease;
+}
+
+.filter-category summary:hover {
+  background: #f9f9f9;
+}
+
+.category-count {
+  color: #999;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+.filter-category-content {
+  padding: 0.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+}
+
+.filter-section label {
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+  color: #555;
+}
+
+.filter-section select {
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.filter-section select:hover {
+  border-color: #667eea;
+}
+
+.filter-section select:focus {
+  outline: none;
+  border-color: #667eea;
+}

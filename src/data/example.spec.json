@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "dataSource": {
+    "type": "file",
+    "path": "./data/example.json"
+  },
+  "provider": {
+    "type": "native",
+    "config": {}
+  },
+  "backend": {
+    "type": "native",
+    "config": {}
+  },
+  "settings": {
+    "dataSource": {
+      "mode": "provider",
+      "providerType": "native",
+      "config": {}
+    },
+    "heuristics": {
+      "enumInference": true,
+      "setDetection": true
+    },
+    "plugins": {
+      "providers": ["native", "duckdb-wasm"],
+      "backends": ["native", "duckdb-wasm"],
+      "views": ["grid", "hierarchical", "graph"]
+    }
+  },
+  "visualizations": [],
+  "metadata": {
+    "columns": {
+      "Status": {
+        "format": {
+          "type": "badge",
+          "classMap": {
+            "Active": "badge-success",
+            "Pending": "badge-warning",
+            "Inactive": "badge-secondary"
+          }
+        }
+      }
+    }
+  }
+}

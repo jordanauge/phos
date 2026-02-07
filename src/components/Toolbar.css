@@ -1,0 +1,469 @@
+/*
+ * Copyright (c) 2026 Jordan Auge
+ *
+ * This file is part of PHOS.
+ *
+ * PHOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * PHOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with PHOS.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+.toolbar {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid #dee2e6;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.toolbar-compact {
+  background: var(--bg-secondary, white);
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+  padding: 10px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  overflow: visible;
+}
+
+.toolbar-inline {
+  background: transparent;
+  border-bottom: none;
+  padding: 0;
+}
+
+.toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  min-width: 0;
+  position: relative;
+  width: 100%;
+}
+
+.search-container-expanded {
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border-color, #e0e0e0);
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar-group-left {
+  margin-right: 6px;
+}
+
+.toolbar-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary, #666);
+}
+
+.toolbar-select {
+  padding: 6px 10px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 4px;
+  background: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.toolbar-btn {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color, #ccc);
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.toolbar-hamburger {
+  font-size: 16px;
+  padding: 6px 10px;
+}
+
+.toolbar-actions {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  background: white;
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 8px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  z-index: 20;
+  max-width: 700px;
+}
+
+.toolbar-actions .column-picker {
+  min-width: 160px;
+}
+
+.toolbar-muted {
+  color: #999;
+  font-size: 13px;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+  .toolbar-row {
+    gap: 10px;
+  }
+
+  .search-input {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 900px) {
+  .toolbar-actions {
+    position: static;
+    width: 100%;
+  }
+
+  .toolbar-group-left {
+    width: 100%;
+  }
+}
+
+.toolbar-btn:hover {
+  background: var(--bg-hover, #f5f5f5);
+  border-color: var(--accent-color, #007bff);
+}
+
+.toolbar-btn.primary {
+  background: var(--accent-color, #007bff);
+  color: white;
+  border-color: var(--accent-color, #007bff);
+}
+
+.toolbar-btn.primary:hover {
+  background: var(--accent-hover, #0056b3);
+}
+
+.toolbar-separator {
+  width: 1px;
+  height: 40px;
+  background: #dee2e6;
+}
+
+.group-by {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.group-by label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+.group-by select {
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  background: white;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.preset-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  min-width: 400px;
+  max-width: 600px;
+  z-index: 1000;
+}
+
+.preset-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.preset-modal-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.preset-modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+  color: var(--text-secondary, #666);
+}
+
+.preset-modal-close:hover {
+  color: var(--text-primary, #000);
+}
+
+.preset-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.preset-item {
+  padding: 12px;
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.preset-item:hover {
+  background: var(--bg-hover, #f9f9f9);
+  border-color: var(--accent-color, #007bff);
+}
+
+.preset-item-name {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.preset-item-details {
+  font-size: 12px;
+  color: var(--text-secondary, #666);
+}
+
+.preset-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.settings-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary, #666);
+  margin-top: 6px;
+}
+
+.settings-section {
+  margin-top: 10px;
+}
+
+.settings-section-title {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary, #333);
+  margin-bottom: 4px;
+}
+
+.settings-input {
+  margin-left: 8px;
+  padding: 4px 8px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 4px;
+  font-size: 12px;
+  min-width: 180px;
+}
+
+.settings-hint {
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--text-secondary, #777);
+}
+
+.mode-toggle-mini {
+  display: inline-flex;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 3px;
+  overflow: hidden;
+  font-size: 11px;
+  margin-left: 8px;
+}
+
+.mode-toggle-mini button {
+  padding: 2px 6px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.column-picker-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: grab;
+}
+
+.column-picker-item:active {
+  cursor: grabbing;
+}
+
+.column-picker-item:hover {
+  background: var(--bg-hover, #f5f5f5);
+}
+
+.column-drag-handle {
+  color: var(--text-secondary, #777);
+  font-size: 12px;
+}
+
+.mode-toggle-mini button.active {
+  background: var(--accent-color, #007bff);
+  color: white;
+}
+
+.mode-toggle-mini button:hover:not(.active) {
+  background: var(--bg-hover, #f0f0f0);
+}
+
+.mode-toggle-mini button:first-child {
+  border-right: 1px solid var(--border-color, #ccc);
+}
+
+.column-picker {
+  position: relative;
+}
+
+.column-picker details {
+  position: relative;
+}
+
+.column-picker summary {
+  padding: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  background: white;
+  list-style: none;
+  user-select: none;
+}
+
+.column-picker summary::-webkit-details-marker {
+  display: none;
+}
+
+.column-picker summary:hover {
+  background: #f8f9fa;
+}
+
+.column-picker-dropdown {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  right: 0;
+  background: white;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 0.5rem;
+  z-index: 10;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+}
+
+.column-picker-dropdown label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.column-picker-dropdown label:hover {
+  background: #f8f9fa;
+}
+
+.column-picker-dropdown input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.toolbar-badge-dirty {
+  background-color: #ffc107;
+  color: #333;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.toolbar-badge-readonly {
+  background-color: #e0e0e0;
+  color: #555;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.toolbar-badge-readonly {
+  background-color: #e0e0e0;
+  color: #555;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}

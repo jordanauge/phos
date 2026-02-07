@@ -1,0 +1,206 @@
+/*
+ * Copyright (c) 2026 Jordan Auge
+ *
+ * This file is part of PHOS.
+ *
+ * PHOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * PHOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with PHOS.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+.info-tooltip-container {
+  position: relative;
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.info-icon {
+  background: none;
+  border: none;
+  color: var(--text-secondary, #666);
+  font-size: 14px;
+  cursor: help;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.info-icon:hover {
+  color: var(--accent-color, #007bff);
+}
+
+.info-tooltip-popup {
+  position: fixed;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  background: white;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 2000;
+  min-width: 280px;
+  max-width: 400px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.info-tooltip-popup::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-bottom-color: var(--border-color, #ccc);
+}
+
+.info-tooltip-popup::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-bottom-color: white;
+  margin-bottom: -1px;
+}
+
+.info-tooltip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+
+.info-tooltip-header strong {
+  font-size: 14px;
+  color: var(--text-primary, #333);
+}
+
+.info-edit-btn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.info-edit-btn:hover {
+  opacity: 1;
+}
+
+.info-tooltip-description {
+  margin: 0 0 8px 0;
+  color: var(--text-primary, #333);
+}
+
+.info-tooltip-examples {
+  font-size: 12px;
+  color: var(--text-secondary, #666);
+  padding-top: 6px;
+  border-top: 1px solid var(--border-color, #e0e0e0);
+}
+
+.info-tooltip-examples strong {
+  font-weight: 600;
+}
+
+.info-tooltip-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-tooltip-textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.info-tooltip-textarea:focus {
+  outline: 2px solid var(--accent-color, #007bff);
+  border-color: transparent;
+}
+
+.info-tooltip-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.info-tooltip-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary, #666);
+}
+
+.info-tooltip-toggle.is-disabled {
+  opacity: 0.7;
+}
+
+.info-tooltip-toggle.is-disabled input {
+  cursor: not-allowed;
+}
+
+.info-tooltip-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #6b7280;
+  background: #f3f4f6;
+  border-radius: 999px;
+  padding: 2px 8px;
+  margin-bottom: 6px;
+}
+
+.info-btn {
+  padding: 6px 12px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.info-btn.save {
+  background: var(--accent-color, #007bff);
+  color: white;
+  border-color: var(--accent-color, #007bff);
+}
+
+.info-btn.save:hover {
+  background: var(--accent-hover, #0056b3);
+}
+
+.info-btn.cancel {
+  background: white;
+  color: var(--text-secondary, #666);
+}
+
+.info-btn.cancel:hover {
+  background: var(--bg-hover, #f5f5f5);
+}

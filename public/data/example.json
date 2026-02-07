@@ -1,0 +1,23 @@
+[
+  {
+    "ID": 1,
+    "Name": "Sample Item A",
+    "Category": "Type X",
+    "Value": 100,
+    "Status": "Active"
+  },
+  {
+    "ID": 2,
+    "Name": "Sample Item B",
+    "Category": "Type Y",
+    "Value": 200,
+    "Status": "Pending"
+  },
+  {
+    "ID": 3,
+    "Name": "Sample Item C",
+    "Category": "Type X",
+    "Value": 150,
+    "Status": "Inactive"
+  }
+]

@@ -1,0 +1,179 @@
+/*
+ * Copyright (c) 2026 Jordan Auge
+ *
+ * This file is part of PHOS.
+ *
+ * PHOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * PHOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with PHOS.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+.multi-level-sort-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sort-level-inline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: var(--bg-secondary, #f9f9f9);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 4px;
+}
+
+.sort-select-compact {
+  padding: 4px 8px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 3px;
+  font-size: 13px;
+  background: white;
+  min-width: 120px;
+}
+
+.sort-toggle-btn,
+.sort-remove-btn {
+  padding: 4px 8px;
+  border: 1px solid var(--border-color, #ccc);
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  min-width: 28px;
+}
+
+.sort-toggle-btn:hover,
+.sort-remove-btn:hover {
+  background: var(--bg-hover, #f0f0f0);
+}
+
+.sort-remove-btn {
+  color: var(--danger-color, #dc3545);
+}
+
+.sort-remove-btn:hover {
+  background: var(--danger-bg, #ffe0e0);
+}
+
+.multi-level-sort {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sort-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.no-sort {
+  color: var(--text-secondary, #666);
+  font-style: italic;
+  font-size: 13px;
+  padding: 8px 0;
+}
+
+.sort-level-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: var(--bg-secondary, #f9f9f9);
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 4px;
+}
+
+.sort-level-label {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text-secondary, #666);
+  min-width: 55px;
+}
+
+.sort-column-select,
+.sort-direction-select {
+  padding: 4px 8px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 3px;
+  font-size: 13px;
+  background: white;
+}
+
+.sort-column-select {
+  flex: 1;
+  min-width: 120px;
+}
+
+.sort-direction-select {
+  min-width: 90px;
+}
+
+.sort-controls {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.sort-control-btn {
+  padding: 4px 8px;
+  border: 1px solid var(--border-color, #ccc);
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 28px;
+}
+
+.sort-control-btn:hover:not(:disabled) {
+  background: var(--bg-hover, #f0f0f0);
+}
+
+.sort-control-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.sort-control-btn.remove-btn {
+  color: var(--danger-color, #dc3545);
+}
+
+.sort-control-btn.remove-btn:hover:not(:disabled) {
+  background: var(--danger-bg, #ffe0e0);
+}
+
+.add-sort-btn {
+  padding: 8px 12px;
+  border: 1px solid var(--accent-color, #007bff);
+  background: white;
+  color: var(--accent-color, #007bff);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.add-sort-btn:hover:not(:disabled) {
+  background: var(--accent-color, #007bff);
+  color: white;
+}
+
+.add-sort-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

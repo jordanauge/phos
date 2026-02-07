@@ -1,0 +1,98 @@
+/*
+ * Copyright (c) 2026 Jordan Auge
+ *
+ * This file is part of PHOS.
+ *
+ * PHOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * PHOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with PHOS.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+.hierarchical-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.empty-state {
+  padding: 2rem;
+  text-align: center;
+  color: #6c757d;
+}
+
+.tree-node {
+  border-left: 2px solid #dee2e6;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.tree-node summary {
+  font-weight: 600;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.tree-node summary::before {
+  content: '▶ ';
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.tree-node[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.tree-node summary:hover {
+  background: #e9ecef;
+}
+
+.tree-node table {
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
+
+.group-context-menu,
+.hierarchical-view .cell-context-menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  z-index: 50;
+  min-width: 180px;
+}
+
+.group-context-menu button,
+.hierarchical-view .cell-context-menu button {
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.group-context-menu button:hover,
+.hierarchical-view .cell-context-menu button:hover {
+  background: #f1f5f9;
+}

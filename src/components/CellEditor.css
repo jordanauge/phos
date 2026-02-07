@@ -1,0 +1,98 @@
+/*
+ * Copyright (c) 2026 Jordan Auge
+ *
+ * This file is part of PHOS.
+ *
+ * PHOS is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * PHOS is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with PHOS.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+.cell-editor-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.cell-editor {
+  background: white;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 6px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 400px;
+  max-width: 600px;
+}
+
+.cell-editor-input,
+.cell-editor-textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+
+.cell-editor-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.cell-editor-input:focus,
+.cell-editor-textarea:focus {
+  outline: 2px solid var(--accent-color, #007bff);
+  border-color: transparent;
+}
+
+.cell-editor-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.cell-editor-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.cell-editor-btn.save {
+  background: var(--accent-color, #007bff);
+  color: white;
+  border-color: var(--accent-color, #007bff);
+}
+
+.cell-editor-btn.save:hover {
+  background: var(--accent-hover, #0056b3);
+}
+
+.cell-editor-btn.cancel {
+  background: white;
+  color: var(--text-secondary, #666);
+}
+
+.cell-editor-btn.cancel:hover {
+  background: var(--bg-hover, #f5f5f5);
+}
